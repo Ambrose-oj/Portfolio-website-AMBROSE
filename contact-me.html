@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Me - Web Developer Portfolio</title>
+    <link rel="stylesheet" href="contact-me.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="page-header">
+      <nav class="main-nav">
+        <a href="/index.html" class="back-link">
+          <i class="fa-solid fa-arrow-left"></i>
+          Back to Home
+        </a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="hero-section">
+        <div class="hero-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <h1 class="hero-title">
+          Let's Work
+          <span class="gradient-text">Together</span>
+          <i class="fas fa-sparkles sparkle-icon"></i>
+        </h1>
+        <p class="hero-description">
+          Ready to bring your ideas to life? I'm here to help you build amazing
+          web experiences that make a difference. Let's create something
+          extraordinary together.
+        </p>
+      </div>
+
+      <div class="main-grid">
+        <div class="form-section">
+          <div class="form-card">
+            <div class="form-header">
+              <h2>Send Me a Message</h2>
+              <p>
+                I'd love to hear about your project. Let's discuss how we can
+                work together.
+              </p>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="submit-btn">
+                <span>Send Message</span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <div class="info-card">
+            <h3>Get in Touch</h3>
+            <p>
+              I'm always open to discussing new opportunities and interesting
+              projects.
+            </p>
+
+            <div class="contact-methods">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Email</h4>
+                  <p>Emekaojimba10@gmail.com</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Phone</h4>
+                  <p>(+234) 901 306 5712</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Location</h4>
+                  <p>Lagos, Nigeria</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <h4>Follow Me</h4>
+              <div class="social-icons">
+                <a href="#" class="social-link">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a
+                  href="https://github.com/Ambrose-oj?tab=repositories"
+                  class="social-link"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://x.com/iamambrose_" class="social-link">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <!-- <a href="#" class="social-link">
+                  <i class="fab fa-dribbble"></i>
+                </a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-section">
+        <div class="footer-card">
+          <h3>Ready to Start Your Project?</h3>
+          <p>
+            Whether you need a stunning website, a powerful web application, or
+            want to modernize your existing digital presence, I'm here to help
+            turn your vision into reality.
+          </p>
+          <div class="tech-tags">
+            <span class="tech-tag">HTML, CSS & JS </span>
+            <span class="tech-tag">Modern UI/UX</span>
+            <span class="tech-tag">Responsive Design</span>
+            <span class="tech-tag">Performance Optimized</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Form submission handler
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Add loading state
+          const submitBtn = this.querySelector(".submit-btn");
+          const originalText = submitBtn.innerHTML;
+          submitBtn.innerHTML =
+            '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
+          submitBtn.disabled = true;
+
+          // Simulate form submission (replace with actual form handling)
+          setTimeout(() => {
+            alert("Thank you for your message! I'll get back to you soon.");
+            this.reset();
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+          }, 2000);
+        });
+
+      // Add fade-in animation on page load
+      window.addEventListener("load", function () {
+        document.body.classList.add("loaded");
+      });
+    </script>
+  </body>
+</html>
